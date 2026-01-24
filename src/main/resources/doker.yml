@@ -1,0 +1,21 @@
+Lancer un conteneur PostgreSQL
+  #docker run -d \
+--name postgres-db \
+-e POSTGRES_DB=demopoc \
+-e POSTGRES_USER=demoadmin \
+-e POSTGRES_PASSWORD=MotDePasseFort \
+-p 5432:5432 \
+-v postgres_data:/var/lib/postgresql/data \
+postgres:14
+
+Vérifier que PostgreSQL est bien démarré
+  
+  #docker ps
+  #docker logs postgres-db
+
+M==> database system is ready to accept connections
+
+
+Se connecter à la base
+
+  #docker exec -it postgres-db psql -U demoadmin -d demopoc
