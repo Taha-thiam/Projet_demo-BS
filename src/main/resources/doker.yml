@@ -1,11 +1,12 @@
 Lancer un conteneur PostgreSQL
-  #docker run -d \
---name postgres-db \
--e POSTGRES_DB=demopoc \
--e POSTGRES_USER=demoadmin \
--e POSTGRES_PASSWORD=MotDePasseFort \
--p 5432:5432 \
--v postgres_data:/var/lib/postgresql/data \
+
+docker run -d `
+--name postgres-db `
+-e POSTGRES_DB=demopoc `
+-e POSTGRES_USER=demoadmin `
+-e POSTGRES_PASSWORD=MotDePasseFort `
+-p 5433:5432 `
+-v postgres_data:/var/lib/postgresql/data `
 postgres:14
 
 Vérifier que PostgreSQL est bien démarré
